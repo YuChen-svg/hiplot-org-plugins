@@ -35,6 +35,9 @@ pacman::p_load(pkgs, character.only = TRUE)
   set.seed(123)
   cmd_extra <- "p.adjust.method = conf$extra$pAdjustMethod,
     plot.type = conf$extra$plotType,
+    centrality.plotting = TRUE,  # 确保中心趋势显示
+    centrality.type = 'parametric',  # 保持与默认一致
+    centrality.stat = 'median',  # 关键修改：将均值改为中位数
     pairwise.comparisons = conf$extra$pairwiseComparisons,
     pairwise.display = conf$extra$pairwiseDisplay,
     effsize.type = conf$extra$effsizeType,
